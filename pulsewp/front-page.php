@@ -7,16 +7,26 @@ get_header();
 <section class="pulse-hero">
     <div class="pulse-container pulse-hero-grid">
         <div class="pulse-hero-content">
-            <p class="pulse-eyebrow-dark">Business & Agency Theme</p>
-            <h1>Build a polished business website without starting from scratch.</h1>
+            <p class="pulse-eyebrow-dark">
+                <?php echo esc_html(get_theme_mod('pulsewp_hero_eyebrow', 'Business & Agency Theme')); ?>
+            </p>
+
+            <h1>
+                <?php echo esc_html(get_theme_mod('pulsewp_hero_title', 'Build a polished business website without starting from scratch.')); ?>
+            </h1>
+
             <p>
-                PulseWP is built for agencies, consultants, studios, finance firms, service providers,
-                and growing businesses that need a sharp, credible online presence.
+                <?php echo esc_html(get_theme_mod('pulsewp_hero_text', 'PulseWP is built for agencies, consultants, studios, finance firms, service providers, and growing businesses that need a sharp, credible online presence.')); ?>
             </p>
 
             <div class="pulse-hero-actions">
-                <a href="#services" class="pulse-btn pulse-btn-primary">Explore Services</a>
-                <a href="#process" class="pulse-btn pulse-btn-ghost">See Process</a>
+                <a href="<?php echo esc_url(get_theme_mod('pulsewp_hero_primary_url', '#services')); ?>" class="pulse-btn pulse-btn-primary">
+                    <?php echo esc_html(get_theme_mod('pulsewp_hero_primary_text', 'Explore Services')); ?>
+                </a>
+
+                <a href="<?php echo esc_url(get_theme_mod('pulsewp_hero_secondary_url', '#process')); ?>" class="pulse-btn pulse-btn-ghost">
+                    <?php echo esc_html(get_theme_mod('pulsewp_hero_secondary_text', 'See Process')); ?>
+                </a>
             </div>
         </div>
 
@@ -40,6 +50,7 @@ get_header();
     </div>
 </section>
 
+<?php if (get_theme_mod('pulsewp_show_services', true)) : ?>
 <section class="pulse-section" id="services">
     <div class="pulse-container">
         <div class="pulse-section-head">
@@ -69,7 +80,9 @@ get_header();
         </div>
     </div>
 </section>
+<?php endif; ?>
 
+<?php if (get_theme_mod('pulsewp_show_stats', true)) : ?>
 <section class="pulse-stats-section">
     <div class="pulse-container pulse-stats-grid">
         <div>
@@ -93,7 +106,9 @@ get_header();
         </div>
     </div>
 </section>
+<?php endif; ?>
 
+<?php if (get_theme_mod('pulsewp_show_process', true)) : ?>
 <section class="pulse-section" id="process">
     <div class="pulse-container pulse-process-grid">
         <div class="pulse-section-head pulse-section-head-left">
@@ -129,7 +144,9 @@ get_header();
         </div>
     </div>
 </section>
+<?php endif; ?>
 
+<?php if (get_theme_mod('pulsewp_show_cases', true)) : ?>
 <section class="pulse-section pulse-case-section">
     <div class="pulse-container">
         <div class="pulse-section-head">
@@ -168,7 +185,9 @@ get_header();
         </div>
     </div>
 </section>
+<?php endif; ?>
 
+<?php if (get_theme_mod('pulsewp_show_testimonial', true)) : ?>
 <section class="pulse-testimonial-section">
     <div class="pulse-container">
         <div class="pulse-testimonial-card">
@@ -183,7 +202,9 @@ get_header();
         </div>
     </div>
 </section>
+<?php endif; ?>
 
+<?php if (get_theme_mod('pulsewp_show_final_cta', true)) : ?>
 <section class="pulse-final-cta" id="contact">
     <div class="pulse-container">
         <div class="pulse-final-card">
@@ -196,6 +217,7 @@ get_header();
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <?php
 get_footer();
