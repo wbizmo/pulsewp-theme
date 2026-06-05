@@ -1,0 +1,200 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "900px",
+      "wideSize": "1180px"
+    },
+    "color": {
+      "custom": true,
+      "customGradient": true,
+      "defaultPalette": false,
+      "palette": [
+        {
+          "slug": "pulse-primary",
+          "color": "#0E2238",
+          "name": "Pulse Primary"
+        },
+        {
+          "slug": "pulse-accent",
+          "color": "#C5A572",
+          "name": "Pulse Accent"
+        },
+        {
+          "slug": "pulse-soft",
+          "color": "#f8f6f0",
+          "name": "Pulse Soft"
+        },
+        {
+          "slug": "pulse-light",
+          "color": "#eef2f6",
+          "name": "Pulse Light"
+        },
+        {
+          "slug": "white",
+          "color": "#ffffff",
+          "name": "White"
+        },
+        {
+          "slug": "black",
+          "color": "#111827",
+          "name": "Black"
+        }
+      ]
+    },
+    "typography": {
+      "customFontSize": true,
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "slug": "inter",
+          "name": "Inter",
+          "fontFamily": "\"Inter\", sans-serif"
+        },
+        {
+          "slug": "playfair-display",
+          "name": "Playfair Display",
+          "fontFamily": "\"Playfair Display\", serif"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "14px",
+          "name": "Small"
+        },
+        {
+          "slug": "normal",
+          "size": "16px",
+          "name": "Normal"
+        },
+        {
+          "slug": "medium",
+          "size": "20px",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "size": "32px",
+          "name": "Large"
+        },
+        {
+          "slug": "x-large",
+          "size": "48px",
+          "name": "Extra Large"
+        },
+        {
+          "slug": "hero",
+          "size": "clamp(48px, 7vw, 88px)",
+          "name": "Hero"
+        }
+      ]
+    },
+    "spacing": {
+      "customSpacingSize": true,
+      "spacingSizes": [
+        {
+          "slug": "xs",
+          "size": "8px",
+          "name": "XS"
+        },
+        {
+          "slug": "sm",
+          "size": "16px",
+          "name": "SM"
+        },
+        {
+          "slug": "md",
+          "size": "24px",
+          "name": "MD"
+        },
+        {
+          "slug": "lg",
+          "size": "48px",
+          "name": "LG"
+        },
+        {
+          "slug": "xl",
+          "size": "80px",
+          "name": "XL"
+        }
+      ],
+      "units": ["px", "rem", "em", "%", "vw", "vh"]
+    },
+    "border": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#f8f6f0",
+      "text": "#0E2238"
+    },
+    "typography": {
+      "fontFamily": "\"Inter\", sans-serif",
+      "lineHeight": "1.75"
+    },
+    "elements": {
+      "button": {
+        "border": {
+          "radius": "14px"
+        },
+        "color": {
+          "background": "#C5A572",
+          "text": "#0E2238"
+        },
+        "typography": {
+          "fontWeight": "800"
+        },
+        "spacing": {
+          "padding": {
+            "top": "13px",
+            "right": "18px",
+            "bottom": "13px",
+            "left": "18px"
+          }
+        }
+      },
+      "link": {
+        "color": {
+          "text": "#0E2238"
+        },
+        "typography": {
+          "fontWeight": "700"
+        }
+      },
+      "heading": {
+        "color": {
+          "text": "#0E2238"
+        },
+        "typography": {
+          "fontFamily": "\"Playfair Display\", serif",
+          "fontWeight": "700",
+          "lineHeight": "1.05"
+        }
+      }
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "radius": "14px"
+        }
+      },
+      "core/group": {
+        "spacing": {
+          "padding": {
+            "top": "24px",
+            "right": "24px",
+            "bottom": "24px",
+            "left": "24px"
+          }
+        }
+      }
+    }
+  }
+}
