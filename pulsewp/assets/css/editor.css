@@ -1,0 +1,73 @@
+body {
+    color: #0E2238;
+    font-family: "Inter", sans-serif;
+    background: #f8f6f0;
+    line-height: 1.75;
+}
+
+.editor-styles-wrapper {
+    color: #0E2238;
+    font-family: "Inter", sans-serif;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+    font-family: "Playfair Display", serif;
+    color: #0E2238;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+}
+
+.editor-styles-wrapper p,
+.editor-styles-wrapper li {
+    color: rgba(14, 34, 56, 0.72);
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.editor-styles-wrapper a {
+    color: #0E2238;
+    font-weight: 800;
+    text-decoration-color: rgba(197, 165, 114, 0.5);
+}
+
+.editor-styles-wrapper .wp-block-button__link {
+    border-radius: 14px;
+    background: #C5A572;
+    color: #0E2238;
+    padding: 13px 18px;
+    font-weight: 900;
+}
+
+.editor-styles-wrapper blockquote,
+.editor-styles-wrapper .wp-block-quote {
+    margin: 32px 0;
+    padding: 28px;
+    border-left: 4px solid #C5A572;
+    background: rgba(197, 165, 114, 0.1);
+    border-radius: 20px;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    line-height: 1.35;
+}
+
+.editor-styles-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.editor-styles-wrapper th,
+.editor-styles-wrapper td {
+    padding: 14px;
+    border-bottom: 1px solid rgba(14, 34, 56, 0.1);
+    text-align: left;
+}
+
+.editor-styles-wrapper th {
+    background: rgba(14, 34, 56, 0.05);
+}

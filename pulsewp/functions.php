@@ -29,6 +29,8 @@ function pulsewp_setup() {
     add_theme_support('custom-units');
     add_theme_support('editor-font-sizes');
 
+    add_editor_style('assets/css/editor.css');
+
     add_theme_support('editor-color-palette', [
         [
             'name'  => __('Pulse Primary', 'pulsewp'),
