@@ -1,0 +1,434 @@
+:root {
+    --pulse-primary: #0E2238;
+    --pulse-accent: #C5A572;
+    --pulse-bg: #f8f6f0;
+    --pulse-soft: #eef2f6;
+    --pulse-white: #ffffff;
+    --pulse-text: #0E2238;
+    --pulse-muted: rgba(14, 34, 56, 0.58);
+    --pulse-line: rgba(14, 34, 56, 0.1);
+    --pulse-shadow: 0 24px 70px rgba(14, 34, 56, 0.13);
+    --pulse-radius: 28px;
+    --pulse-font: "Inter", sans-serif;
+    --pulse-display: "Playfair Display", serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--pulse-text);
+    font-family: var(--pulse-font);
+    background:
+        radial-gradient(circle at top left, rgba(197, 165, 114, 0.18), transparent 35%),
+        linear-gradient(135deg, #f8f6f0 0%, #ffffff 48%, #eef2f6 100%);
+    overflow-x: hidden;
+}
+
+body.pulse-menu-open {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pulse-container {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.pulse-main {
+    min-height: 60vh;
+}
+
+.pulse-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.82);
+    border-bottom: 1px solid rgba(14, 34, 56, 0.08);
+    backdrop-filter: blur(18px);
+    transition: 0.25s ease;
+}
+
+.pulse-header.is-scrolled {
+    box-shadow: 0 14px 40px rgba(14, 34, 56, 0.09);
+}
+
+.pulse-header-inner {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.pulse-brand {
+    display: inline-flex;
+    align-items: center;
+    min-width: max-content;
+}
+
+.pulse-brand-text,
+.pulse-footer-brand h3 {
+    font-family: var(--pulse-display);
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.custom-logo {
+    max-height: 54px;
+    width: auto;
+}
+
+.pulse-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.pulse-menu,
+.pulse-footer-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 0;
+    margin: 0;
+}
+
+.pulse-menu a {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(14, 34, 56, 0.7);
+    transition: 0.2s ease;
+}
+
+.pulse-menu a:hover,
+.pulse-menu .current-menu-item > a {
+    color: var(--pulse-primary);
+}
+
+.pulse-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.pulse-btn {
+    border: 0;
+    cursor: pointer;
+    border-radius: 14px;
+    padding: 13px 18px;
+    font-size: 14px;
+    font-weight: 800;
+    transition: 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+
+.pulse-btn-primary {
+    background: var(--pulse-accent);
+    color: var(--pulse-primary);
+}
+
+.pulse-btn-primary:hover {
+    background: var(--pulse-primary);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.pulse-btn-light {
+    background: white;
+    color: var(--pulse-primary);
+}
+
+.pulse-btn-light:hover {
+    background: var(--pulse-accent);
+}
+
+.pulse-mobile-toggle {
+    display: none;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 14px;
+    background: rgba(14, 34, 56, 0.07);
+    cursor: pointer;
+    padding: 12px;
+}
+
+.pulse-mobile-toggle span {
+    display: block;
+    height: 2px;
+    background: var(--pulse-primary);
+    margin: 5px 0;
+    border-radius: 99px;
+}
+
+.pulse-mobile-drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    background: rgba(14, 34, 56, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s ease;
+}
+
+.pulse-mobile-drawer.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.pulse-mobile-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(420px, 90vw);
+    height: 100%;
+    background: white;
+    padding: 24px;
+    transform: translateX(100%);
+    transition: 0.28s ease;
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.18);
+}
+
+.pulse-mobile-drawer.active .pulse-mobile-panel {
+    transform: translateX(0);
+}
+
+.pulse-mobile-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--pulse-line);
+}
+
+.pulse-mobile-close {
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 13px;
+    background: rgba(14, 34, 56, 0.07);
+    color: var(--pulse-primary);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.pulse-mobile-menu {
+    list-style: none;
+    padding: 22px 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.pulse-mobile-menu a {
+    display: block;
+    padding: 15px 14px;
+    border-radius: 15px;
+    color: var(--pulse-primary);
+    font-weight: 800;
+    background: rgba(14, 34, 56, 0.04);
+}
+
+.pulse-mobile-cta {
+    width: 100%;
+}
+
+.pulse-footer {
+    margin-top: 80px;
+    background: var(--pulse-primary);
+    color: white;
+    padding: 34px 0 24px;
+}
+
+.pulse-footer-cta {
+    background: linear-gradient(135deg, rgba(197, 165, 114, 0.22), rgba(255,255,255,0.07));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--pulse-radius);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 46px;
+}
+
+.pulse-eyebrow {
+    margin: 0 0 8px;
+    color: var(--pulse-accent);
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.pulse-footer-cta h2 {
+    margin: 0;
+    font-family: var(--pulse-display);
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: -0.04em;
+}
+
+.pulse-footer-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr 1fr;
+    gap: 36px;
+    padding-bottom: 36px;
+}
+
+.pulse-footer-brand p,
+.pulse-footer-widget,
+.pulse-footer-widget p {
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.8;
+}
+
+.pulse-footer-title {
+    color: white;
+    margin: 0 0 16px;
+    font-size: 15px;
+}
+
+.pulse-footer-widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.pulse-footer-widget a {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.pulse-footer-widget a:hover {
+    color: var(--pulse-accent);
+}
+
+.pulse-footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+.pulse-footer-menu {
+    gap: 18px;
+}
+
+.pulse-footer-menu a {
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.pulse-backtop {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 16px;
+    background: var(--pulse-accent);
+    color: var(--pulse-primary);
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: 0.25s ease;
+    z-index: 70;
+    box-shadow: 0 16px 34px rgba(14, 34, 56, 0.18);
+}
+
+.pulse-backtop.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.pulse-sidebar {
+    display: grid;
+    gap: 20px;
+}
+
+.pulse-widget {
+    background: white;
+    border: 1px solid var(--pulse-line);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: 0 12px 34px rgba(14, 34, 56, 0.07);
+}
+
+.pulse-widget-title {
+    margin: 0 0 14px;
+    font-size: 18px;
+}
+
+@media (max-width: 900px) {
+    .pulse-nav,
+    .pulse-header-actions .pulse-btn {
+        display: none;
+    }
+
+    .pulse-mobile-toggle {
+        display: block;
+    }
+
+    .pulse-header-inner {
+        min-height: 74px;
+    }
+
+    .pulse-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pulse-footer-cta,
+    .pulse-footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 620px) {
+    .pulse-container {
+        width: min(100% - 24px, 1180px);
+    }
+
+    .pulse-brand-text {
+        font-size: 29px;
+    }
+
+    .pulse-footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pulse-footer-cta {
+        padding: 24px;
+    }
+}
