@@ -1304,3 +1304,18 @@ label,
         order: 2;
     }
 }
+
+.pulse-blank-canvas {
+    background: #ffffff;
+}
+
+.pulse-blank-main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.pulse-blank-main .entry-content,
+.pulse-blank-main .wp-block-group,
+.pulse-blank-main .wp-site-blocks {
+    margin: 0;
+}
