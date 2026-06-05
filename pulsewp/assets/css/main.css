@@ -55,13 +55,17 @@ img {
 }
 
 .pulse-header {
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 40;
     background: rgba(255, 255, 255, 0.82);
     border-bottom: 1px solid rgba(14, 34, 56, 0.08);
     backdrop-filter: blur(18px);
     transition: 0.25s ease;
+}
+
+.pulse-header.pulse-header-sticky {
+    position: sticky;
+    top: 0;
 }
 
 .pulse-header.is-scrolled {

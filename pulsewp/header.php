@@ -1,5 +1,12 @@
 <?php
 if (!defined('ABSPATH')) exit;
+
+$sticky_header = get_theme_mod('pulsewp_sticky_header', true);
+$header_classes = 'pulse-header';
+
+if ($sticky_header) {
+    $header_classes .= ' pulse-header-sticky';
+}
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -14,7 +21,7 @@ if (!defined('ABSPATH')) exit;
 
 <div id="page" class="pulse-site">
 
-<header class="pulse-header" id="pulseHeader">
+<header class="<?php echo esc_attr($header_classes); ?>" id="pulseHeader">
     <div class="pulse-container pulse-header-inner">
 
         <a class="pulse-brand" href="<?php echo esc_url(home_url('/')); ?>">
@@ -41,7 +48,7 @@ if (!defined('ABSPATH')) exit;
                 <?php echo esc_html(get_theme_mod('pulsewp_header_cta_text', 'Book a Consultation')); ?>
             </a>
 
-            <button class="pulse-mobile-toggle" id="pulseMobileToggle" aria-label="Open menu">
+            <button class="pulse-mobile-toggle" id="pulseMobileToggle" aria-label="<?php esc_attr_e('Open menu', 'pulsewp'); ?>">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -55,7 +62,7 @@ if (!defined('ABSPATH')) exit;
     <div class="pulse-mobile-panel">
         <div class="pulse-mobile-top">
             <span class="pulse-brand-text"><?php bloginfo('name'); ?></span>
-            <button class="pulse-mobile-close" id="pulseMobileClose" aria-label="Close menu">×</button>
+            <button class="pulse-mobile-close" id="pulseMobileClose" aria-label="<?php esc_attr_e('Close menu', 'pulsewp'); ?>">×</button>
         </div>
 
         <?php

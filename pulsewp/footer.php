@@ -1,5 +1,10 @@
 <?php
 if (!defined('ABSPATH')) exit;
+
+$footer_text = get_theme_mod(
+    'pulsewp_footer_text',
+    sprintf('© %s %s. All rights reserved.', date('Y'), get_bloginfo('name'))
+);
 ?>
 
 </main>
@@ -9,9 +14,15 @@ if (!defined('ABSPATH')) exit;
 
         <div class="pulse-footer-cta">
             <div>
-                <p class="pulse-eyebrow">Ready to move forward?</p>
-                <h2>Build a sharper business presence.</h2>
+                <p class="pulse-eyebrow">
+                    <?php echo esc_html(get_theme_mod('pulsewp_footer_cta_eyebrow', 'Ready to move forward?')); ?>
+                </p>
+
+                <h2>
+                    <?php echo esc_html(get_theme_mod('pulsewp_footer_cta_title', 'Build a sharper business presence.')); ?>
+                </h2>
             </div>
+
             <a class="pulse-btn pulse-btn-light" href="<?php echo esc_url(get_theme_mod('pulsewp_header_cta_url', '#contact')); ?>">
                 <?php echo esc_html(get_theme_mod('pulsewp_header_cta_text', 'Book a Consultation')); ?>
             </a>
@@ -37,7 +48,7 @@ if (!defined('ABSPATH')) exit;
         </div>
 
         <div class="pulse-footer-bottom">
-            <p>&copy; <?php echo esc_html(date('Y')); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
+            <p><?php echo esc_html($footer_text); ?></p>
 
             <?php
             wp_nav_menu([
@@ -52,7 +63,7 @@ if (!defined('ABSPATH')) exit;
     </div>
 </footer>
 
-<button class="pulse-backtop" id="pulseBackTop" aria-label="Back to top">↑</button>
+<button class="pulse-backtop" id="pulseBackTop" aria-label="<?php esc_attr_e('Back to top', 'pulsewp'); ?>">↑</button>
 
 </div>
 

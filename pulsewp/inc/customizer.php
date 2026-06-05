@@ -14,11 +14,6 @@ function pulsewp_customize_register($wp_customize) {
         'priority'    => 30,
     ]);
 
-    /*
-    |--------------------------------------------------------------------------
-    | Colors
-    |--------------------------------------------------------------------------
-    */
     $wp_customize->add_section('pulsewp_colors', [
         'title' => __('Theme Colors', 'pulsewp'),
         'panel' => 'pulsewp_panel',
@@ -44,11 +39,6 @@ function pulsewp_customize_register($wp_customize) {
         'section' => 'pulsewp_colors',
     ]));
 
-    /*
-    |--------------------------------------------------------------------------
-    | Header
-    |--------------------------------------------------------------------------
-    */
     $wp_customize->add_section('pulsewp_header_options', [
         'title' => __('Header Options', 'pulsewp'),
         'panel' => 'pulsewp_panel',
@@ -87,11 +77,6 @@ function pulsewp_customize_register($wp_customize) {
         'type'    => 'checkbox',
     ]);
 
-    /*
-    |--------------------------------------------------------------------------
-    | Homepage Hero
-    |--------------------------------------------------------------------------
-    */
     $wp_customize->add_section('pulsewp_home_hero', [
         'title' => __('Homepage Hero', 'pulsewp'),
         'panel' => 'pulsewp_panel',
@@ -120,11 +105,6 @@ function pulsewp_customize_register($wp_customize) {
         ]);
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | Homepage Sections
-    |--------------------------------------------------------------------------
-    */
     $wp_customize->add_section('pulsewp_home_sections', [
         'title' => __('Homepage Sections', 'pulsewp'),
         'panel' => 'pulsewp_panel',
@@ -152,11 +132,6 @@ function pulsewp_customize_register($wp_customize) {
         ]);
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | Footer
-    |--------------------------------------------------------------------------
-    */
     $wp_customize->add_section('pulsewp_footer_options', [
         'title' => __('Footer Options', 'pulsewp'),
         'panel' => 'pulsewp_panel',
@@ -180,6 +155,17 @@ function pulsewp_customize_register($wp_customize) {
 
     $wp_customize->add_control('pulsewp_footer_cta_title', [
         'label'   => __('Footer CTA Title', 'pulsewp'),
+        'section' => 'pulsewp_footer_options',
+        'type'    => 'text',
+    ]);
+
+    $wp_customize->add_setting('pulsewp_footer_text', [
+        'default'           => sprintf('© %s %s. All rights reserved.', date('Y'), get_bloginfo('name')),
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+
+    $wp_customize->add_control('pulsewp_footer_text', [
+        'label'   => __('Footer Bottom Text', 'pulsewp'),
         'section' => 'pulsewp_footer_options',
         'type'    => 'text',
     ]);
