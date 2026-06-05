@@ -7,17 +7,58 @@ define('PULSEWP_VERSION', '1.0.0');
 define('PULSEWP_DIR', get_template_directory());
 define('PULSEWP_URI', get_template_directory_uri());
 
+if (!isset($content_width)) {
+    $content_width = 1200;
+}
+
 function pulsewp_setup() {
     load_theme_textdomain('pulsewp', PULSEWP_DIR . '/languages');
 
     add_theme_support('title-tag');
+    add_theme_support('menus');
+    add_theme_support('widgets');
     add_theme_support('post-thumbnails');
+    add_theme_support('automatic-feed-links');
+    add_theme_support('align-wide');
+    add_theme_support('responsive-embeds');
+    add_theme_support('editor-styles');
+    add_theme_support('wp-block-styles');
+    add_theme_support('custom-spacing');
+    add_theme_support('custom-line-height');
+    add_theme_support('appearance-tools');
+    add_theme_support('custom-units');
+    add_theme_support('editor-font-sizes');
+
+    add_theme_support('editor-color-palette', [
+        [
+            'name'  => __('Pulse Primary', 'pulsewp'),
+            'slug'  => 'pulse-primary',
+            'color' => '#0E2238',
+        ],
+        [
+            'name'  => __('Pulse Accent', 'pulsewp'),
+            'slug'  => 'pulse-accent',
+            'color' => '#C5A572',
+        ],
+        [
+            'name'  => __('Pulse Soft', 'pulsewp'),
+            'slug'  => 'pulse-soft',
+            'color' => '#f8f6f0',
+        ],
+        [
+            'name'  => __('White', 'pulsewp'),
+            'slug'  => 'white',
+            'color' => '#ffffff',
+        ],
+    ]);
+
     add_theme_support('custom-logo', [
         'height'      => 80,
         'width'       => 240,
         'flex-height' => true,
         'flex-width'  => true,
     ]);
+
     add_theme_support('html5', [
         'search-form',
         'comment-form',
@@ -27,9 +68,6 @@ function pulsewp_setup() {
         'style',
         'script',
     ]);
-    add_theme_support('automatic-feed-links');
-    add_theme_support('align-wide');
-    add_theme_support('responsive-embeds');
 
     register_nav_menus([
         'primary' => __('Primary Menu', 'pulsewp'),
