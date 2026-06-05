@@ -874,3 +874,433 @@ img {
         grid-template-columns: 1fr;
     }
 }
+
+.pulse-page-hero {
+    padding: 76px 0 54px;
+    text-align: center;
+}
+
+.pulse-page-hero h1 {
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: var(--pulse-display);
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1;
+    letter-spacing: -0.055em;
+}
+
+.pulse-page-hero p {
+    max-width: 680px;
+    margin: 18px auto 0;
+    color: var(--pulse-muted);
+    line-height: 1.8;
+}
+
+.pulse-content-section {
+    padding: 40px 0 80px;
+}
+
+.pulse-layout-sidebar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 34px;
+    align-items: start;
+}
+
+.pulse-entry-container {
+    max-width: 900px;
+}
+
+.pulse-post-grid {
+    display: grid;
+    gap: 24px;
+}
+
+.pulse-post-card {
+    overflow: hidden;
+    background: white;
+    border: 1px solid var(--pulse-line);
+    border-radius: 28px;
+    box-shadow: 0 12px 34px rgba(14, 34, 56, 0.07);
+}
+
+.pulse-post-thumb {
+    display: block;
+    aspect-ratio: 16 / 8;
+    overflow: hidden;
+    background: var(--pulse-primary);
+}
+
+.pulse-post-thumb img,
+.pulse-single-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pulse-post-body {
+    padding: 28px;
+}
+
+.pulse-post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: var(--pulse-muted);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.pulse-post-card h2 {
+    margin: 0;
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+}
+
+.pulse-post-card h2 a:hover {
+    color: var(--pulse-accent);
+}
+
+.pulse-post-excerpt {
+    color: var(--pulse-muted);
+    line-height: 1.8;
+    margin-top: 14px;
+}
+
+.pulse-read-more {
+    display: inline-flex;
+    margin-top: 10px;
+    color: var(--pulse-primary);
+    font-weight: 900;
+}
+
+.pulse-read-more:hover {
+    color: var(--pulse-accent);
+}
+
+.pulse-entry {
+    min-width: 0;
+}
+
+.pulse-entry-content {
+    background: white;
+    border: 1px solid var(--pulse-line);
+    border-radius: 28px;
+    padding: clamp(24px, 5vw, 48px);
+    box-shadow: 0 12px 34px rgba(14, 34, 56, 0.07);
+}
+
+.pulse-single-thumb {
+    overflow: hidden;
+    border-radius: 30px;
+    margin-bottom: 24px;
+    box-shadow: var(--pulse-shadow);
+}
+
+.pulse-entry-content > *:first-child {
+    margin-top: 0;
+}
+
+.pulse-entry-content h1,
+.pulse-entry-content h2,
+.pulse-entry-content h3,
+.pulse-entry-content h4 {
+    color: var(--pulse-primary);
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+}
+
+.pulse-entry-content h2 {
+    font-size: clamp(30px, 4vw, 48px);
+}
+
+.pulse-entry-content h3 {
+    font-size: clamp(24px, 3vw, 34px);
+}
+
+.pulse-entry-content p,
+.pulse-entry-content li {
+    color: rgba(14, 34, 56, 0.72);
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.pulse-entry-content a {
+    color: var(--pulse-primary);
+    font-weight: 800;
+    border-bottom: 2px solid rgba(197, 165, 114, 0.45);
+}
+
+.pulse-entry-content a:hover {
+    color: var(--pulse-accent);
+}
+
+.pulse-entry-content blockquote {
+    margin: 32px 0;
+    padding: 28px;
+    border-left: 4px solid var(--pulse-accent);
+    background: rgba(197, 165, 114, 0.1);
+    border-radius: 20px;
+    font-family: var(--pulse-display);
+    font-size: 28px;
+    line-height: 1.35;
+}
+
+.pulse-entry-content table,
+.pulse-widget table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.pulse-entry-content th,
+.pulse-entry-content td,
+.pulse-widget th,
+.pulse-widget td {
+    padding: 14px;
+    border-bottom: 1px solid var(--pulse-line);
+    text-align: left;
+}
+
+.pulse-entry-content th,
+.pulse-widget th {
+    background: rgba(14, 34, 56, 0.05);
+    color: var(--pulse-primary);
+}
+
+.pulse-entry-content img {
+    border-radius: 22px;
+}
+
+.pulse-entry-content .wp-block-button__link,
+.wp-block-button__link,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.pulse-entry-content button {
+    border: 0;
+    border-radius: 14px;
+    background: var(--pulse-accent);
+    color: var(--pulse-primary);
+    padding: 13px 18px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.pulse-entry-content .wp-block-button__link:hover,
+.wp-block-button__link:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover {
+    background: var(--pulse-primary);
+    color: white;
+    transform: translateY(-1px);
+}
+
+input,
+select,
+textarea,
+.wp-block-search__input,
+.wpcf7 input,
+.wpcf7 textarea,
+.wpcf7 select,
+.wpforms-form input,
+.wpforms-form textarea,
+.wpforms-form select,
+.frm_forms input,
+.frm_forms textarea,
+.frm_forms select {
+    width: 100%;
+    border: 1px solid rgba(14, 34, 56, 0.15);
+    background: white;
+    border-radius: 14px;
+    padding: 13px 14px;
+    color: var(--pulse-primary);
+    font-family: var(--pulse-font);
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.wp-block-search__input:focus,
+.wpcf7 input:focus,
+.wpcf7 textarea:focus,
+.wpcf7 select:focus,
+.wpforms-form input:focus,
+.wpforms-form textarea:focus,
+.wpforms-form select:focus,
+.frm_forms input:focus,
+.frm_forms textarea:focus,
+.frm_forms select:focus {
+    border-color: var(--pulse-accent);
+    box-shadow: 0 0 0 4px rgba(197, 165, 114, 0.14);
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+label,
+.wpforms-field-label,
+.frm_primary_label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--pulse-primary);
+    font-weight: 800;
+}
+
+.wpcf7,
+.wpforms-container,
+.frm_forms,
+.gform_wrapper {
+    background: white;
+    border: 1px solid var(--pulse-line);
+    border-radius: 28px;
+    padding: clamp(22px, 4vw, 34px);
+    box-shadow: 0 12px 34px rgba(14, 34, 56, 0.07);
+}
+
+.wpcf7-submit,
+.wpforms-submit,
+.frm_button_submit,
+.gform_button {
+    width: auto;
+    display: inline-flex;
+    justify-content: center;
+    background: var(--pulse-accent) !important;
+    color: var(--pulse-primary) !important;
+    border-radius: 14px !important;
+    border: 0 !important;
+    padding: 13px 20px !important;
+    font-weight: 900 !important;
+}
+
+.wpcf7-submit:hover,
+.wpforms-submit:hover,
+.frm_button_submit:hover,
+.gform_button:hover {
+    background: var(--pulse-primary) !important;
+    color: white !important;
+}
+
+.pulse-widget ul,
+.pulse-widget ol {
+    padding-left: 18px;
+    color: var(--pulse-muted);
+    line-height: 1.8;
+}
+
+.pulse-widget a {
+    color: var(--pulse-primary);
+    font-weight: 800;
+}
+
+.pulse-widget a:hover {
+    color: var(--pulse-accent);
+}
+
+.pulse-widget input[type="search"] {
+    margin-bottom: 10px;
+}
+
+.pulse-pagination {
+    margin-top: 18px;
+}
+
+.pulse-pagination .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pulse-pagination .page-numbers {
+    min-width: 44px;
+    height: 44px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 14px;
+    background: white;
+    border: 1px solid var(--pulse-line);
+    font-weight: 900;
+}
+
+.pulse-pagination .page-numbers.current,
+.pulse-pagination .page-numbers:hover {
+    background: var(--pulse-primary);
+    color: white;
+}
+
+.pulse-post-tags {
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pulse-post-tags a {
+    display: inline-flex;
+    padding: 9px 12px;
+    border-radius: 999px;
+    background: rgba(197, 165, 114, 0.16);
+    color: var(--pulse-primary);
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.pulse-empty-state {
+    background: white;
+    border: 1px solid var(--pulse-line);
+    border-radius: 28px;
+    padding: 34px;
+    box-shadow: 0 12px 34px rgba(14, 34, 56, 0.07);
+}
+
+.pulse-empty-state h2 {
+    margin-top: 0;
+    font-size: 34px;
+    letter-spacing: -0.04em;
+}
+
+.comments-area {
+    margin-top: 28px;
+    background: white;
+    border: 1px solid var(--pulse-line);
+    border-radius: 28px;
+    padding: clamp(22px, 4vw, 34px);
+    box-shadow: 0 12px 34px rgba(14, 34, 56, 0.07);
+}
+
+.comment-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.comment-body {
+    border-bottom: 1px solid var(--pulse-line);
+    padding: 18px 0;
+}
+
+.comment-reply-link {
+    color: var(--pulse-accent);
+    font-weight: 900;
+}
+
+@media (max-width: 920px) {
+    .pulse-layout-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .pulse-sidebar {
+        order: 2;
+    }
+}
